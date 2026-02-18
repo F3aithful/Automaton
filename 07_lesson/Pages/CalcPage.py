@@ -23,7 +23,7 @@ class CalcPage:
         self._driver.find_element(By.CSS_SELECTOR, 'span.btn.btn-outline-warning').click()
 
     def waiting(self):
-        assert WebDriverWait(self._driver, 45).until(
+        WebDriverWait(self._driver, 45).until(
             EC.text_to_be_present_in_element((By.CSS_SELECTOR, "div.screen"), "15")
             )
         return self._driver.find_element(By.CSS_SELECTOR, "div.screen").text
